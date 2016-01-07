@@ -1,9 +1,20 @@
 <div class="container">
-    
-    <flex-slider flex-slide="s in mySlides">
-        <li>
-            <img ng-src="{{s}}">
-        </li>
-    </flex-slider>
-    
+  <form>
+    <div class="form-group">
+      <label >Host</label>
+      <input class="form-control" ng-change="formChange()"  ng-model="form.host" text="text">
+    </div>
+    <div class="form-group">
+      <label >User</label>
+      <input class="form-control" ng-change="formChange()"  type= "text" ng-model="form.user">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input class="form-control" ng-change="formChange()" type= "text" ng-model="form.password">
+    </div>
+    <label>FTP String</label>
+    <textarea class="form-control" readonly="readonly" rows="3" ng-model="copyString.text"></textarea>
+    <br>
+    <button type="button" name="button" clipboard text="copyString.text" class="btn btn-primary">Copy To Clipboard</button>
+  </form>
 </div>

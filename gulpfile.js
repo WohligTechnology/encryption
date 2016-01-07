@@ -9,6 +9,8 @@ var jsArray = [
   './bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
   './bower_components/ui-router/release/angular-ui-router.min.js',
   './bower_components/angular-flexslider/angular-flexslider.js',
+  './bower_components/cryptojslib/rollups/aes.js',
+  './bower_components/angular-clipboard/angular-clipboard.js',
   './js/app.js',
   './js/controllers.js',
   './js/templateservice.js',
@@ -22,9 +24,9 @@ var replacehostTo = "http://wohlig.co.in/demo2/";
 
 
 
-var ftpString = "U2FsdGVkX1+jcFED/CJbcYNiOJ42eBsjlxqmrcKWSIPH9Sao/4535zPQX5Fa7VYGAHSfkKCXbDpiUfJhkRRijaerS1lJ/k+dSfqsfl45ICkzMTJ7fBNVDj/242ur9ZG4HZDhSe1O/J4vEUboWDRBhg==";
+var ftpString = "U2FsdGVkX19q6uv3Jx3NbtrtNIxzzijHTWNs4Xx3NPkme6nVUByKZEAvFzvo3tMCv5RPIsj0QHTK4SsL+rh6wDPaCntzCqJmLB6TZr1xlOGz5QjRZWCyGIjBljs4qwSuq+cMOwg+t7ROnHog0qVo7A==";
 
-var uploadingFolder = "temp123";
+var uploadingFolder = "encryption";
 var password = "";
 
 
@@ -92,12 +94,10 @@ gulp.task('deploy', function() {
 
 
 gulp.task('ftp', function() {
-  console.log(password);
   var decrypted = CryptoJS.AES.decrypt(ftpString, password);
   var decryptedJSON = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 
   decryptedJSON.log = gutil.log;
-  console.log(decryptedJSON);
   var conn = ftp.create(decryptedJSON);
 
 

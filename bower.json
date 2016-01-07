@@ -29,7 +29,9 @@
     "jquery": "~2.1.4",
     "lodash": "~3.10.0",
     "ui-router": "~0.2.15",
-    "angular-animate": "~1.4.6"
+    "angular-animate": "~1.4.6",
+    "cryptojslib": "https://github.com/sytelus/CryptoJS.git#~3.1.2",
+    "angular-clipboard": "~1.2.1"
   },
   "resolutions": {
     "angular": "~1.4.8"
